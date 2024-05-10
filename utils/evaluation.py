@@ -17,3 +17,4 @@ def diagnosis_evaluate(predict_diagnosis, golden_diagnosis, handler):
     
     return rank
     
+def get_symptoms_formatted(patient):
