@@ -37,12 +37,12 @@ class RareDataLoader():
                 #remove chinese characters
                 word = word.encode("ascii", "ignore").decode()
                 words = word.replace(";", "/").split("/")
-
+                
                 disease_word_list.extend(words)
-                print(disease_word_list)
-
         
-        return (", ").join(set(disease_word_list))
+        disease_word_list = list(filter(None, disease_word_list))
+        
+        return (", ").join(set(disease_word_list)).strip()
     
     def get_full_dataset(self):
         self.patient_list = []
